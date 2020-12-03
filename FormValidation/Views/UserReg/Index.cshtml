@@ -1,0 +1,83 @@
+﻿@*@model IEnumerable<FormValidation.Models.DataTable>*@
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container left"></div>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create User", "Create")
+</p>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        
+            @*@Html.DisplayNameFor(model => @Model.Rows[i][0])*@
+        <th >User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th> Date Of Birth</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>CNIC No</th>
+        <th>Mobile No</th>
+        <th>Phone No</th>
+        <th>Address</th>
+        <th>Registration Date</th>
+        <th>User Image</th>
+        <th>CRUD</th>
+    </tr>
+
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+    <tr>
+        <td>
+            @Model.Rows[i][0]
+        </td>
+        <td>
+            @Model.Rows[i][1]
+        </td>
+        <td>
+            @Model.Rows[i][2]
+        </td>
+        <td>
+            @Model.Rows[i][3]
+        </td>
+        <td>
+            @Model.Rows[i][4]
+        </td>
+        <td>
+            @Model.Rows[i][5]
+        </td>
+        <td>
+            @Model.Rows[i][6]
+        </td>
+        <td>
+            @Model.Rows[i][7]
+        </td>
+        <td>
+            @Model.Rows[i][8]
+        </td>
+        <td>
+            @Model.Rows[i][9]
+        </td>
+        <td>
+            @Model.Rows[i][10]
+        </td>
+        <td>
+            @Model.Rows[i][11]
+        </td>
+        <td>
+            @*@Model.Rows[i][12]*@
+            <img src="@Url.Content("~/UserImages/"+Model.Rows[i][12])" width="200" height="210" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = @Model.Rows[i][0] }) |
+            @Html.ActionLink("Details", "Details", new { id = @Model.Rows[i][0] }) |
+            @Html.ActionLink("Delete", "Delete", new { id = @Model.Rows[i][0] })
+        </td>
+    </tr>
+    }
+
+</table>

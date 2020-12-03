@@ -11,6 +11,7 @@ namespace FormValidation
     {
         protected void Application_Start()
         {
+            UnityConfig.RegisterComponents();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
