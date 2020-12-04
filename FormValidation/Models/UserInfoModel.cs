@@ -20,14 +20,15 @@ namespace FormValidation.Models
         public string LastName { get; set; }
 
         [Required]
-       // [EmailAddress]
+        // [EmailAddress]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]
-        [Display(Name ="Date of Birth")]
+        [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}",ApplyFormatInEditMode =true)]
         public DateTime DOB { get; set; }
 
         [Required]
@@ -63,6 +64,7 @@ namespace FormValidation.Models
         [Required]
         [Display(Name = "Registration Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime RegistrationDate { get; set; }
 
         [Required]
